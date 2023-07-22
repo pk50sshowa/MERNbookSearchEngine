@@ -19,6 +19,8 @@
     "apollo-server-express": "^2.15.0",
     "bcrypt": "^5.1.0",
     "jsonwebtoken": "^9.0.1",
-    "mongoose": "^5.13.20"
+    "mongoose": "^5.13.20",
+    "express": "^4.17.2",
+    "graphql": "^15.8.0"
   }
 }
