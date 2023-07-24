@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('*', (res) => {
-  res.sendfile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 db.once('open', () => {
