@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
@@ -17,7 +17,7 @@ const authLink = setContext((_, { headers}) => {
   return {
     headers: {
       ...headers,
-      authorization: token ? 'Bearer ${token}' : '',
+      authorization: token ? `Bearer ${token}` : '',
     },
   };
 });
@@ -34,11 +34,11 @@ function App() {
     <Router>
       <>
         <Navbar />
-        <Route>
+        <Routes>
           <Route path='/' element={<SearchBooks />} />
           <Route path='/saved' element={<SavedBooks />} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-        </Route>
+        </Routes>
       </>
     </Router>
     </ApolloProvider>

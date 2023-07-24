@@ -6,7 +6,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const startApolloServer = async (typeDefs, resolvers) => {
   const server = new ApolloServer({
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('*', (res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendfile(path.join(__dirname, '../client/build/index.html'));
 });
 
 db.once('open', () => {
