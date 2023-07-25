@@ -8,19 +8,6 @@ const db = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const startApolloServer = async (typeDefs, resolvers) => {
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    context: authMiddleware,
-  });
-  await server.start();
-  server.applyMiddleware({ app });
-  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-};
-
-startApolloServer(typeDefs, resolvers);
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -42,3 +29,16 @@ db.once('open', () => {
 //   app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
 // });
 //
+
+const startApolloServer = async (typeDefs, resolvers) => {
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: authMiddleware,
+  });
+  await server.start();
+  server.applyMiddleware({ app });
+  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+};
+
+startApolloServer(typeDefs, resolvers);
