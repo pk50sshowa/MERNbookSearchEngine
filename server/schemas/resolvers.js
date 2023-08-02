@@ -1,3 +1,5 @@
+// Resolvers file that handles mutations, queries, adding users, logging in with users, savings books, and removing books
+
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { signToken } = require('../utils/auth');

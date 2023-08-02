@@ -55,6 +55,7 @@ const SignupForm = () => {
     });
   };
 
+  // React template for signup form
   return (
     <>
       {/* This is needed for the validation functionality above */}

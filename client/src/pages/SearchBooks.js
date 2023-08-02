@@ -14,6 +14,7 @@ import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 import { SAVE_BOOK } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 
+// Function to handle searching for books
 const SearchBooks = () => {
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
@@ -93,6 +94,7 @@ const SearchBooks = () => {
     }
   };
 
+  // React template for searching for books
   return (
     <>
       <div className='text-light bg-dark pt-5'>

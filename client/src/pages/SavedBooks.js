@@ -13,6 +13,7 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 import { useQuery, useMutation } from '@apollo/client';
 
+// Function to handle the saved books page
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
   let userData = data?.me || {};
@@ -44,6 +45,7 @@ const SavedBooks = () => {
     return <h2>LOADING...</h2>;
   }
 
+  // React template for viewing saved books
   return (
     <>
       <div fluid className='text-light bg-dark p-5'>

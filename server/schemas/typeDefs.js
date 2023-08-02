@@ -1,3 +1,5 @@
+// TypeDefs file that defines all the types used in the application
+
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`

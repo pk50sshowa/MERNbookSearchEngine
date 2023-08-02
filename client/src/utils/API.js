@@ -8,6 +8,7 @@ export const getMe = (token) => {
   });
 };
 
+// Function to create a user
 export const createUser = (userData) => {
   return fetch('/api/users', {
     method: 'POST',
@@ -18,6 +19,7 @@ export const createUser = (userData) => {
   });
 };
 
+// Function to login with an existing user
 export const loginUser = (userData) => {
   return fetch('/api/users/login', {
     method: 'POST',
@@ -28,6 +30,7 @@ export const loginUser = (userData) => {
   });
 };
 
+// Function to save a book to a user's account
 // save book data for a logged in user
 export const saveBook = (bookData, token) => {
   return fetch('/api/users', {
@@ -40,6 +43,7 @@ export const saveBook = (bookData, token) => {
   });
 };
 
+// Function to remove a book from a user's account
 // remove saved book data for a logged in user
 export const deleteBook = (bookId, token) => {
   return fetch(`/api/users/books/${bookId}`, {

@@ -7,6 +7,7 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+// Function that returns the login form
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
@@ -26,6 +27,7 @@ const LoginForm = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
+  // Function within LoginForm that handles the form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -54,6 +56,7 @@ const LoginForm = () => {
     });
   };
 
+  // React template for login form
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
